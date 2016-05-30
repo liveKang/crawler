@@ -1,0 +1,30 @@
+{
+  "name": "pachong",
+  "version": "1.0.1",
+  "description": "nodeJs",
+  "main": "app,js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "cheerio": "^0.20.0",
+    "eventproxy": "^0.3.4",
+    "superagent": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodeJs",
+    "pachong"
+  ],
+  "author": "rain",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rain1368189893/pachong.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rain1368189893/pachong/issues"
+  },
+  "homepage": "https://github.com/Rain1368189893/pachong#readme"
+}
