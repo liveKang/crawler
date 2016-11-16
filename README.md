@@ -89,9 +89,9 @@ app.listen(3000, function (req, res) {
 ![pachongtu](http://i2.buimg.com/0942549ac195d52e.png)
 
 ###参考资料
-* ![http://www.codesec.net/view/183926.html](http://www.codesec.net/view/183926.html)
-* ![http://cnodejs.org/topic/5203a71844e76d216a727d2e](http://cnodejs.org/topic/5203a71844e76d216a727d2e)
-* ![https://www.npmjs.com/package/eventproxy](https://www.npmjs.com/package/eventproxy)
+* [http://www.codesec.net/view/183926.html](http://www.codesec.net/view/183926.html)
+* [http://cnodejs.org/topic/5203a71844e76d216a727d2e](http://cnodejs.org/topic/5203a71844e76d216a727d2e)
+* [https://www.npmjs.com/package/eventproxy](https://www.npmjs.com/package/eventproxy)
 
 ###遗留问题
 * 控制爬虫并发，规避反爬虫机制
