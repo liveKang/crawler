@@ -12,17 +12,11 @@
 ###使用superagent获取源数据
 SuperAgent 是一个轻量的Ajax API，服务器端（Node.js）客户端（浏览器端）均可使用,SuperAgent具有学习曲线低、使用简单、可读性好的特点,可作为客户端请求代理模块使用，当你想处理get,post,put,delete,head请求时，可以考虑使用SuperAgent
 
-参考资料：http://www.codesec.net/view/183926.html
-
 ###使用cheerio解析
 cheerio充当服务器端的jQuery功能，我们先使用它的.load()来载入HTML，再通过CSS selector来筛选元素。
 
-参考资料：http://cnodejs.org/topic/5203a71844e76d216a727d2e
-
 ###使用eventproxy来并发抓取
 深度嵌套，eventproxy就是使用事件(并行)方法来解决这个问题。当所有的抓取完成后，eventproxy接收到事件消息自动帮你调用处理函数。
-
-参考资料：https://www.npmjs.com/package/eventproxy
 
 ###async控制并发的速度
 使用async的原因是，在实践的过程中，发现在并发获取所需内容的，有些数据不能被抓取过来，而真实的数据是有的，通过资料查找后，发现是网站的反爬虫机制，所以就想到了一个能控制并发速度的模块，当然也有更好的解决办法：动态IP。就是代价会高些。
@@ -93,6 +87,11 @@ app.listen(3000, function (req, res) {
 
 ###抓取数据截图
 ![pachongtu](http://i2.buimg.com/0942549ac195d52e.png)
+
+###参考资料
+* ![http://www.codesec.net/view/183926.html](http://www.codesec.net/view/183926.html)
+* ![http://cnodejs.org/topic/5203a71844e76d216a727d2e](http://cnodejs.org/topic/5203a71844e76d216a727d2e)
+* ![https://www.npmjs.com/package/eventproxy](https://www.npmjs.com/package/eventproxy)
 
 ###遗留问题
 * 控制爬虫并发，规避反爬虫机制
