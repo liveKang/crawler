@@ -5,10 +5,44 @@ var cheerio = require('cheerio');
 var eventproxy = require('eventproxy');
 var async = require('async');
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+/*
+define schema
+ */
+var crawlerSchema = new Schema({
+  title:  String,
+  href:   String,
+  author: String,
+  finishTime: { type: Date, default: Date.now }
+});
+
+/*
+create a model
+ */
+var Crawler = mongoose.model('Crawler', crawlerSchema);
+
+var content = new Crawler({
+  title : "国外那些走心的设计，太牛了！",
+  href : "http://www.jianshu.com/p/1a0d45756717",
+  author : "鑫立方",
+  finishTime : "2016.11.23 09:21"
+});
+
+console.log(content);
+
+/*
+crawler url
+ */
 var targetUrl = 'http://www.jianshu.com/';
 
-mongoose.connect('mongodb://localhost/my_database');
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection erroe:'));
+db.once('open', function() {
+  console.log("db has been opened");
+})
 
 var app = express();
 
@@ -42,8 +76,7 @@ app.get('/',function (req, res, next){
                 finishTime: $('.preview .author-info span').eq(3).text().trim()
               });
             });
-            console.log(topics);
-            res.send(topics);
+            // res.send(topics);
           });
           topicUrls.forEach(function(topicUrl){
             superagent.get(topicUrl)
