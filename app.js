@@ -68,14 +68,14 @@ app.get('/',function (req, res, next){
                     author: topics[i].author,
                     finishTime: topics[i].finishTime
                 })            //保存数据库
-                console.log(crawler);
-                crawler.save(function(err) {
-                    if (err) {
-                        console.log('保存失败')
-                        return;
-                    }
-                    console.log('meow');
-                })
+                // console.log(crawler[i]);
+                // crawler.save(function(err) {
+                //     if (err) {
+                //         console.log('保存失败')
+                //         return;
+                //     }
+                //     console.log('meow');
+                // })
             }
             res.send(crawler);
         });
