@@ -60,24 +60,19 @@ app.get('/',function (req, res, next){
                     finishTime: $('.preview .author-info span').eq(3).text().trim() //发表时间
                 });
             });
-            console.log(topicUrls.length);
-            for(var i = 0;i < topicUrls.length; i++){
-                var crawler = new Crawler({
-                    title:  topics[i].title,
-                    href:   topics[i].href,
-                    author: topics[i].author,
-                    finishTime: topics[i].finishTime
-                })            //保存数据库
-                // console.log(crawler[i]);
-                // crawler.save(function(err) {
-                //     if (err) {
-                //         console.log('保存失败')
-                //         return;
-                //     }
-                //     console.log('meow');
-                // })
+
+            var docs = topics;
+            Crawler.collection.insert(docs, onInsert);
+
+            function onInsert(err,docs) {
+                if (err) {
+                    console.log("save fail");
+                } else {
+                    console.info('%d potatoes were successfully stored.', docs.length);
+                }
             }
-            res.send(crawler);
+
+            res.send(topics);
         });
 
         //深度爬虫
