@@ -1,17 +1,16 @@
-var fs = require('fs');
-var express = require('express');
-var url = require('url');    //解析操作URL
-var superagent = require('superagent'); //客户端请求代理模块
-var cheerio = require('cheerio');
-var eventproxy = require('eventproxy');
-var async = require('async');
-var mongoose = require('mongoose');
+var fs = require('fs'),
+    express = require('express'),
+    url = require('url'),    //解析操作URL
+    superagent = require('superagent'), //客户端请求代理模块
+    cheerio = require('cheerio'),
+    eventproxy = require('eventproxy'),
+    async = require('async'),
+    mongoose = require('mongoose');
+
+var mongourl = 'mongodb://localhost/test1',
+    targetUrl = 'http://www.jianshu.com/';
 
 var app = express();
-
-var mongourl = 'mongodb://localhost/test1';
-var targetUrl = 'http://www.jianshu.com/';
-
 mongoose.connect(mongourl);
 var Schema = mongoose.Schema;   //骨架模版
 
